@@ -1,0 +1,229 @@
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete-clangx'
+Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'stamblerre/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'volgar1x/vim-gocode'
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/json-formatter.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'Shougo/deoplete.nvim'
+" maybe exec : apt install clang ,or yum(dnf) install clang 
+Plug 'zchee/deoplete-clang'
+Plug 'chun-yang/auto-pairs'
+call plug#end()
+
+"base
+set nocp		" Enables us Vim specific features
+set tf 			" Indicate fast terminal conn for faster redraw
+set ls=2 		" Show status line always
+set enc=utf-8   " Set default encoding to UTF-8
+set ar 			" Automatically read changed files
+set ai 			" Enabile Autoindent
+set is			" Shows the match while typing
+set hls			" Highlight found searches
+set noeb 		" No beeps
+set nu			" Show line numbers
+set sc 			" Show me what I'm typing
+set noswapfile	" Don't use swapfile
+set nobk		" Don't create annoying backup files
+set spr			" Vertical windows should be split to right
+set sp			" Horizontal windows should split to bottom
+set aw 			" Automatically save before :next, :make etc.
+set hid			" Buffer should still exist if window is closed
+set nosm 		" Do not show matching brackets by flickering
+set nosmd 		" We show the mode with airline or lightline
+set scs			" ... but not it begins with upper case
+set nocuc		" Do not highlight column (speeds up highlighting)
+set nocul		" Do not highlight cursor (speeds up highlighting)
+set lz			" Wait to redraw
+set mouse=""
+set cul 
+
+set pumheight=50                " Completion window max size
+set completeopt=menu,menuone    " Show popup menu, even if there is one entry
+set ignorecase                  " Search case insensitive...
+set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+filetype off                    " Reset filetype detection first ...
+filetype plugin indent on       " ... and enable filetype detection
+set backspace=indent,eol,start  " Makes backspace key more powerful.
+colorscheme darcula
+
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+let mapleader='\'
+let g:mapleader='\'
+
+inoremap <leader>t <ESC>A
+inoremap <leader>h <ESC>I
+inoremap <leader>n <ESC>2li
+
+" fast edit and update .vimrc 
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+inoremap <leader>w <Esc>:w<cr> 
+nnoremap <leader>w <Esc>:w<cr> 
+inoremap jk <Esc>
+     
+noremap <silent> [b :bprevious<CR>
+noremap <silent> [n :bnext<CR>
+
+" use CTRL + (h,j,k,l) jump window 
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+inoremap <leader>vp <ESC>:vsplit<CR>
+inoremap <leader>sp <ESC>:split<CR>
+nnoremap <leader>vp <ESC>:vsplit<CR>
+nnoremap <leader>sp <ESC>:split<CR>
+
+" NERDTree open
+map <F8> :NERDTreeToggle<CR>
+
+let g:NERDTreeDirArrowExpandable=">"
+let g:NERDTreeDirArrowCollapsible="v"
+
+
+" deoplete
+set completeopt+=noinsert
+set completeopt+=noselect
+let g:python3_host_prog  = '/usr/bin/python3'
+let g:python3_host_skip_check = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#package_dot = 1
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+
+"set clipboard+=unnamedplus
+
+let g:clipboard = {
+  \   'name': 'xclip-xfce4-clipman',
+  \   'copy': {
+  \      '+': 'xclip -selection clipboard',
+  \      '*': 'xclip -selection clipboard',
+  \    },
+  \   'paste': {
+  \      '+': 'xclip -selection clipboard -o',
+  \      '*': 'xclip -selection clipboard -o',
+  \   },
+  \   'cache_enabled': 1,
+  \ }
+
+" vim-go
+let g:go_fmt_command = "goimports"
+let g:go_autodetect_gopath = 1
+let g:go_list_type = "quickfix"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_generate_tags = 1
+
+
+augroup go
+  autocmd!
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop =4 shiftwidth=4
+  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+  autocmd FileType go nmap <leader>t  <Plug>(go-test)
+  autocmd FileType go nmap <leader>r  <Plug>(go-run)
+  autocmd FileType go nmap <Leader>d <Plug>(go-doc)
+  autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <Leader>i <Plug>(go-info)
+  autocmd FileType go nmap <Leader>l <Plug>(go-metalinter)
+  autocmd FileType go nmap <Leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <Leader>s <Plug>(go-def-split)
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup END
+
+" arline
+let g:airline#extensions#tabline#enabled = 1
+
+" ctrlp 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_mad = 'CtrlP'
+
+let g:ctrlp_working_path_mode = ''
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+
+" tagbar
+
+nmap <F6> :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
+" format json
+nnoremap fs :call JsonFormatter()<cr>
+
+" cpp
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+let c_no_curly_error=1
+
+" c

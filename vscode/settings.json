@@ -1,0 +1,47 @@
+{
+  	// file
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true
+	  },
+
+	// vim
+	"vim.easymotion": false,
+	"vim.hlsearch": true,
+	"vim.autoindent": true,
+	
+	"vim.handleKeys": {
+		"<C-d>": true,
+		"<C-f>":false, 
+		"<C-c>": false,
+		"<C-v>": false 
+	},
+
+
+	"vim.insertModeKeyBindings": [
+		{
+		"before" : ["j","k"],
+		"after": ["<ESC>"]
+		}
+    ],
+  
+    // editor
+	"editor.tabSize": 4,
+	"editor.fontSize": 14,
+	"files.autoSave": "off",
+	"editor.renderWhitespace": "none",
+	"editor.cursorStyle": "line",
+	"editor.wordWrap": "off",
+	"editor.formatOnSave": false,
+	"editor.fontWeight": "normal",
+	"editor.lineNumbers": "on",  
+	"editor.minimap.enabled": false,
+
+	// workbench
+	"workbench.colorTheme": "Darcula",
+	"workbench.editor.showIcons": true,
+}
+	
