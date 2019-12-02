@@ -10,9 +10,12 @@
 
 	// vim
 	"vim.easymotion": false,
+	"vim.statusBarColorControl": false,
 	"vim.hlsearch": true,
 	"vim.autoindent": true,
-	
+	"vim.useSystemClipboard":true ,
+	"vim.leader": "\\",
+
 	"vim.handleKeys": {
 		"<C-d>": true,
 		"<C-f>":false, 
@@ -20,13 +23,24 @@
 		"<C-v>": false 
 	},
 
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+		"before" : ["Z","Z"],
+		"commands": [":wq"]
+		},
+		{
+		"before" : ["<leader>","w"],
+		"commands": [":w"]
+		}
+	], 
+
 
 	"vim.insertModeKeyBindings": [
 		{
 		"before" : ["j","k"],
 		"after": ["<ESC>"]
 		}
-    ],
+	],
   
     // editor
 	"editor.tabSize": 4,
@@ -43,5 +57,7 @@
 	// workbench
 	"workbench.colorTheme": "Darcula",
 	"workbench.editor.showIcons": true,
+	"go.formatTool": "goimports",
+	"go.useLanguageServer": true,
 }
 	
