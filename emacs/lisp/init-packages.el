@@ -1,92 +1,137 @@
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;;(package-initialize)
 
-(setq org-src-fontify-natively t)
+;; global load path
+(add-to-list 'load-path "~/.emacs.d/evil")
 
-(when (>= emacs-major-version 24) 
-  (require 'package)
-  ;;(package-initialize)
-  (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/") 
-			   ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+(require 'package)
+(package-initialize)
+(setq package-archives '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/") 
+			 ("org-cn" . "http://elpa.emacs-china.org/org/") 
+			 ("gnu-cn" . "http://elpa.emacs-china.org/gnu/")))
 (require 'cl)
+(defvar lzj/packages 
+  '(
+    ;; --- Auto-completion ---
+    company
+    auto-complete-clang
+    ;; --- Better Editor ---
+    hungry-delete swiper counsel smartparens ivy evil evil-escape
+    ;; --- Major Mode ---
+    js2-mode json-reformat
+    ;; --- Minor Mode ---
+    nodejs-repl 
+    ;;
+    exec-path-from-shell
+    ;; --- Themes ---
+    monokai-theme
+    ;; solarized-theme
 
-;; Add Packages
-(defvar my/packages 
-  '(company hungry-delete swiper counsel smartparens js2-mode nodejs-repl exec-path-from-shell
-	    monokai-theme go-complete go-autocomplete go-imports go-impl vimrc-mode evil ivy swiper
-	    flycheck neotree all-the-icons json-mode auto-compile elisp-format goto-last-change
-	    colemak-evil  dix-evil  evil-anzu  evil-args  evil-avy  evil-better-visual-line
-	    evil-cleverparens  evil-colemak-basics  evil-colemak-minimal  evil-collection
-	    evil-commentary  evil-dvorak  evil-ediff  evil-ex-fasd  evil-ex-shell-command
-	    evil-exchange  evil-expat  evil-extra-operator  evil-find-char-pinyin  evil-fringe-mark
-	    evil-god-state  evil-goggles  evil-iedit-state  evil-indent-plus  evil-indent-textobject
-	    evil-leader  evil-ledger  evil-lion  evil-lisp-state  evil-lispy  evil-magit
-	    evil-mark-replace  evil-matchit  evil-mc  evil-mc-extras  evil-mu4e  evil-multiedit
-	    evil-opener  evil-org  evil-owl  evil-paredit  evil-python-movement  evil-quickscope
-	    evil-rails  evil-replace-with-char  evil-replace-with-register  evil-rsi
-	    evil-ruby-text-objects  evil-smartparens  evil-snipe  evil-space  evil-string-inflection
-	    evil-surround  evil-tabs  evil-terminal-cursor-changer  evil-test-helpers
-	    evil-text-object-python  evil-textobj-anyblock  evil-textobj-column  evil-textobj-entire
-	    evil-textobj-line  evil-textobj-syntax  evil-traces  evil-tutor  evil-tutor-ja
-	    evil-vimish-fold  evil-visual-mark-mode  evil-visual-replace  evil-visualstar  exato
-	    exwm-firefox-evil  helm-evil-markers  kaleidoscope-evil-state-flash  kubernetes-evil
-	    lispyville  on-parens  org-evil  powerline-evil  symex  syndicate  treemacs-evil general
-	    darcula-theme use-package ac-js2 evil-escape modern-cpp-font-lock auto-complete-c-headers) 
+    ;; format
+    format-all elisp-format
+    ;; clang complete
+    auto-complete-clang
+    ;; syntax
+    use-package flycheck
+
+    ;; lisp
+    elisp-slime-nav elisp-format evil-lisp-state
+
+    ;; go
+    go-mode go-autocomplete)
   "Default packages")
 
-;; company
-(add-hook 'after-init-hook'global-company-mode)
+(setq package-selected-packages lzj/packages)
 
-;; flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(setq package-selected-packages my/packages)
-(defun my/packages-installed-p () 
-  (loop for pkg in my/packages when (not (package-installed-p pkg)) do (return nil) finally (return
-											     t)))
-(unless (my/packages-installed-p) 
+(defun lzj/packages-installed-p () 
+  (loop for pkg in lzj/packages when (not (package-installed-p pkg)) do (return nil) finally (return
+											      t)))
+(unless (lzj/packages-installed-p) 
   (message "%s" "Refreshing package database...") 
   (package-refresh-contents) 
-  (dolist (pkg my/packages) 
-    (when (not (package-installed-p pkg)) (package-install pkg))))
+  (dolist (pkg lzj/packages) 
+    (when (not (package-installed-p pkg)) 
+      (package-install pkg))))
 
-(require 'go-complete)
-(add-hook 'completion-at-point-functions 'go-complete-at-point)
-
-(require 'go-autocomplete)
-(require 'auto-complete-config)
-(ac-config-default)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-
-;; go-imports
-(add-hook 'go-mode-hook #'(lambda() 
-			    (require 'go-imports) 
-			    (define-key go-mode-map "\C-cI" 'go-imports-insert-import) 
-			    (define-key go-mode-map "\C-cR" go-imports-reload-packages-list)))
-
-;;(go-imports-insert-import "~/go/src")
-
-;; impl
-(custom-set-variables '(go-impl-aliases-alist '(("hh" . "http.Handler") 
-						("irw" . "io.ReadWriter"))))
-
-;; vim
-(require 'vimrc-mode)
-(add-to-list 'auto-mode-alist '("\\.vim\\(rc\\)?\\'" . vimrc-mode))
-
-;; evil
-(add-to-list 'load-path "~/.emacs.d/evil")
+;; require
+(require 'hungry-delete)
 (require 'evil)
-(require 'evil-escape)
+(require 'auto-complete-clang)
+(require 'auto-complete-config)
+(require 'smartparens-config)
 
+(use-package 
+  flycheck 
+  :ensure t 
+  :init (global-flycheck-mode))
+
+(add-to-list 'lzj/packages 'monokai-theme)
+(load-theme 'monokai t)
+
+
+(add-hook 'js-mode-hook #'smartparens-mode)
+
+;; mode
+(global-company-mode t)
+(delete-selection-mode t)
+(global-hungry-delete-mode t)
+(ivy-mode t)
 (evil-mode t)
 (evil-escape-mode t)
+(format-all-mode t)
+(smartparens-global-mode t)
+(global-flycheck-mode t)
 
-
-(setq-default evil-esc-delay 0.2)
+(setq ivy-use-virtual-buffers 1)
+(setq enable-recursive-minnibuffers 1)
+(setq-default evil-escape-delay 0.2)
 (setq-default evil-escape-key-sequence "jk")
+(setq x-select-enable-clipboard-manager nil)
 
-;; ivy
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+(defun lzj-fs() 
+  (interactive) 
+  (json-pretty-print-buffer))
+
+(global-set-key (kbd "<f5>") 'lzj-fs)
+
+(define-key ac-mode-map  [(control tab)] 'auto-complete)
+(defun lzj-ac-config () 
+  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary
+					      ac-source-words-in-same-mode-buffers)) 
+  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup) 
+  (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup) 
+  (add-hook 'css-mode-hook 'ac-css-mode-setup) 
+  (add-hook 'auto-complete-mode-hook 'ac-common-setup) 
+  (global-auto-complete-mode t))
+(defun lzj-ac-cc-mode-setup () 
+  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+
+;; ac-source-gtags
+(lzj-ac-config)
+
+(setq ac-clang-flags (mapcar (lambda (item) 
+			       (concat "-I" item)) 
+			     (split-string "
+ /usr/include/c++/4.6
+ /usr/include/c++/4.6/x86_64-linux-gnu/.
+ /usr/include/c++/4.6/backward
+ /usr/lib/gcc/x86_64-linux-gnu/4.6.1/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.6.1/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+")))
+
+
+(setq auto-mode-alist (append '(("\\.js\\'" . js2-mode)) auto-mode-alist))
+
+(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
 (global-set-key "\C-s" 'swiper)
@@ -97,8 +142,8 @@
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 (global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;;(global-set-key (kbd "<f2 i") 'counsel-info-lookup-symbol)
+;;(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c k") 'counsel-ag)
@@ -106,78 +151,81 @@
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
-;;neotree
-(add-to-list 'load-path "/some/path/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-(require 'all-the-icons)
-
-(all-the-icons-octicon "file-binary") ;; GitHub Octicon for Binary File
-(all-the-icons-faicon  "cogs")	      ;; FontAwesome icon for cogs
-(all-the-icons-wicon   "tornado")     ;; Weather Icon for tornado
-
-(all-the-icons-wicon "tornado" 
-		     :face 'all-the-icons-blue)
-(propertize (all-the-icons-octicon "package") 'face 
-	    `(:family ,(all-the-icons-octicon-family) 
-		      :height 1.2)
-	    'display '(raise -0.1))
-(setq inhibit-compacting-font-caches t)
-
-;; auto-compile
-(setq load-prefer-newer t)
-(package-initialize)
-(require 'auto-compile)
-(auto-compile-on-load-mode)
-(auto-compile-on-save-mode)
-
-;; lisp format
-(require 'elisp-format)
-;;(require 'colemak-evil)
-;;(key-chord-define-global " e" 'evil-normal-state)
-
-(autoload 'goto-last-change "goto-last-change" "Set point to the position of the last change." t)
-
-(require 'general)
-
-;;(general-imap "j"
-;;              (general-key-dispatch 'self-insert-command
-;;                "k" 'evil-normal-state))
-
-(require 'use-package)
-
-(eval-when-compile
-  ;; Following line is not needed if use-package.el is in ~/.emacs.d
-  (add-to-list 'load-path "~/.emacs") 
-  (require 'darcula-theme))
-
-;;(use-package foo)
+(set-face-attribute 'default nil 
+			:height 150)
 
 
-(require 'smartparens-config)
-(smartparens-global-mode t)
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq eshell-path-env path-from-shell) ; for eshell users
+    (setq exec-path (split-string path-from-shell path-separator))))
 
-;; ac-js1
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-;;(add-to-list 'company-backends 'ac-js2-company)
-(setq ac-js2-evaluate-calls t)
-;;(setq ac-js2-external-libraries '("full/path/to/a-library.js"))
+(when window-system (set-exec-path-from-shell-PATH))
+
+(add-to-list 'exec-path "~/go/bin")
+
+(defun lzj-go-mode-hook ()
+  ; Call Gofmt before saving                                                    
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  ; Godef jump key binding                                                      
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "M-*") 'pop-tag-mark)
+  )
+
+(add-hook 'go-mode-hook 'lzj-go-mode-hook)
+
+(defun auto-complete-for-go ()
+(auto-complete-mode 1))
+ (add-hook 'go-mode-hook 'auto-complete-for-go)
+
+(with-eval-after-load 'go-mode
+   (require 'go-autocomplete))
+
+;; go
+(autoload 'go-mode "go-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+(add-hook 'go-mode-hook 'lsp-deferred)
+
+(setenv "GOPATH" "/usr/local/go/")
+(setenv "PATH" (concat (getenv "PATH") ":" "/extra/path/element"))
+(setq exec-path (append exec-path (list (expand-file-name "/another/thing"))))
 
 
-(add-to-list 'auto-mode-alist '("[.]el$" . lisp-mode))
+;; flycheck
+(add-to-list 'load-path "~/go/src/github.com/dougm/goflymake")
+(require 'go-flymake)
+(require 'go-flycheck)
 
-(add-hook 'c++-mode-hook #'modern-c++-font-lock)
-(add-to-list 'auto-mode-alist '("[.]cpp$" . modern-c++-font-lock-mode))
+;;(add-to-list 'load-path (concat myoptdir "AC"))
+(require 'auto-complete-config)
+;;(add-to-list 'ac-dictionary-directories (concat myoptdir "AC/ac-dict"))
+(require 'auto-complete-clang)
+
+(setq ac-auto-start nil)
+(setq ac-quick-help-delay 0.5)
+;; (ac-set-trigger-key "TAB")
+;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
+(define-key ac-mode-map  [(control tab)] 'auto-complete)
+(defun my-ac-config ()
+  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+  ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+  (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+  (add-hook 'css-mode-hook 'ac-css-mode-setup)
+  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+  (global-auto-complete-mode t))
+(defun my-ac-cc-mode-setup ()
+  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; ac-source-gtags
+(my-ac-config)
 
 
-;; c++
-(defun my:ac-c-headers-init ()
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-source 'ac-source-c-headers))
 
 
-(add-hook 'c++-mode-hook 'my:ac-c-headers-init)
-(add-hook 'c-mode-hook 'my:ac-c-headers-init)
 
 (provide 'init-packages)
