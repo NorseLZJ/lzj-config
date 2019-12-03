@@ -27,43 +27,48 @@ Plug 'Shougo/deoplete.nvim'
 " maybe exec : apt install clang ,or yum(dnf) install clang 
 Plug 'zchee/deoplete-clang'
 Plug 'chun-yang/auto-pairs'
+
 call plug#end()
 
 "base
-set nocp		" Enables us Vim specific features
-set tf 			" Indicate fast terminal conn for faster redraw
-set ls=2 		" Show status line always
-set enc=utf-8   " Set default encoding to UTF-8
-set ar 			" Automatically read changed files
-set ai 			" Enabile Autoindent
-set is			" Shows the match while typing
-set hls			" Highlight found searches
-set noeb 		" No beeps
-set nu			" Show line numbers
-set sc 			" Show me what I'm typing
-set noswapfile	" Don't use swapfile
-set nobk		" Don't create annoying backup files
-set spr			" Vertical windows should be split to right
-set sp			" Horizontal windows should split to bottom
-set aw 			" Automatically save before :next, :make etc.
-set hid			" Buffer should still exist if window is closed
-set nosm 		" Do not show matching brackets by flickering
-set nosmd 		" We show the mode with airline or lightline
-set scs			" ... but not it begins with upper case
-set nocuc		" Do not highlight column (speeds up highlighting)
-set nocul		" Do not highlight cursor (speeds up highlighting)
-set lz			" Wait to redraw
-set mouse=""
-set cul 
-
-set pumheight=50                " Completion window max size
-set completeopt=menu,menuone    " Show popup menu, even if there is one entry
-set ignorecase                  " Search case insensitive...
-set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+set nocompatible                " Enables us Vim specific features
 filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
+set ttyfast                     " Indicate fast terminal conn for faster redraw
+set laststatus=2                " Show status line always
+set encoding=utf-8              " Set default encoding to UTF-8
+set autoread                    " Automatically read changed files
+set autoindent                  " Enabile Autoindent
 set backspace=indent,eol,start  " Makes backspace key more powerful.
-colorscheme darcula
+set incsearch                   " Shows the match while typing
+set hlsearch                    " Highlight found searches
+set noerrorbells                " No beeps
+set number                      " Show line numbers
+set showcmd                     " Show me what I'm typing
+set noswapfile                  " Don't use swapfile
+set nobackup                    " Don't create annoying backup files
+set splitright                  " Vertical windows should be split to right
+set splitbelow                  " Horizontal windows should split to bottom
+set autowrite                   " Automatically save before :next, :make etc.
+set hidden                      " Buffer should still exist if window is closed
+set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+set noshowmatch                 " Do not show matching brackets by flickering
+set noshowmode                  " We show the mode with airline or lightline
+set ignorecase                  " Search case insensitive...
+set smartcase                   " ... but not it begins with upper case
+set completeopt=menu,menuone    " Show popup menu, even if there is one entry
+set pumheight=10                " Completion window max size
+set nocursorcolumn              " Do not highlight column (speeds up highlighting)
+set nocursorline                " Do not highlight cursor (speeds up highlighting)
+set lazyredraw                  " Wait to redraw
+colorscheme darcula 			"colorscheme
+set ts=4
+set mouse=""
+set cursorline
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
 " reopening a file
 if has("autocmd")
@@ -227,3 +232,7 @@ let g:cpp_no_function_highlight = 1
 let c_no_curly_error=1
 
 " c
+
+let g:python3_host_prog = "/usr/bin/python3.6"
+set runtimepath+=~/path/to/deoplete.nvim/
+let g:deoplete#enable_at_startup=1
