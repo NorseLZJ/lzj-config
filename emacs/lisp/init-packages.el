@@ -19,7 +19,7 @@
     company
     auto-complete-clang
     ;; --- Better Editor ---
-    hungry-delete swiper counsel smartparens ivy evil evil-escape
+    hungry-delete swiper counsel smartparens ivy evil evil-escape neotree helm helm-ag
     ;; --- Major Mode ---
     js2-mode json-reformat
     ;; --- Minor Mode ---
@@ -27,9 +27,11 @@
     ;;
     exec-path-from-shell
     ;; --- Themes ---
-    monokai-theme
+    monokai-theme all-the-icons-dired
     ;; solarized-theme
 
+    ;; c cpp
+    auto-complete-c-headers
     ;; format
     format-all elisp-format
     ;; clang complete
@@ -224,8 +226,39 @@
 ;; ac-source-gtags
 (my-ac-config)
 
+;; icons 
+(load "all-the-icons-dired.el")
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 
+;; c cpp
+(defun lzj:ac-c-headers-init()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-sources-c-headers))
+
+(add-hook 'c++-mode-hook 'lzj:ac-c-headers-init)
+(add-hook 'c-mode-hook 'lzj:ac-c-headers-init)
+
+
+;; helm
+(require 'helm)
+(helm-mode 1)
+(require 'helm-config)
+(global-set-key (kbd "C-x C-f") 'helm-find)
+(global-set-key (kbd "M-m") 'helm-M-x)
+
+;; helm-ag
+(custom-set-variables '(helm-follow-mode-persistent t))
+
+;;(require 'projectile)
+(defalias 'rgf 'grep-find)
+(defalias 'pff 'project-find-file)
+(defalias 'pfr 'project-find-regexp)
 
 
 (provide 'init-packages)
