@@ -1,12 +1,26 @@
 {
+	// search
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"system/": true,
+		"temp/": true,
+		"library/": true,
+		"build/": true,
+		"!/system/.ps*": true,
+	},
   	// file
-	"files.exclude": {
+	"files.exclude":{
 		"**/.git": true,
 		"**/.svn": true,
 		"**/.hg": true,
 		"**/CVS": true,
-		"**/.DS_Store": true
-	  },
+		"**/.DS_Store": true,
+		"**/.meta": true,
+		"library/":true,
+		"local/":true,
+		"temp/":true,
+	},
 
 	// vim
 	"vim.easymotion": false,
@@ -31,7 +45,15 @@
 		{
 		"before" : ["<leader>","w"],
 		"commands": [":w"]
-		}
+		},
+		{
+		"before" : ["<leader>","s","p"],
+		"commands": [":split"]
+		},
+		{
+		"before" : ["<leader>","v","p"],
+		"commands": [":vsplit"]
+		},
 	], 
 
 
@@ -59,5 +81,6 @@
 	"workbench.editor.showIcons": true,
 	"go.formatTool": "goimports",
 	"go.useLanguageServer": true,
-}
-	
+	"workbench.iconTheme": "vscode-icons-mac",
+	"workbench.editor.enablePreview": false,
+}	
