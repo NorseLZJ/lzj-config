@@ -24,23 +24,12 @@ noremap <leader>w :w<cr>
 
 inoremap jk  <Esc>
 
-inoremap <Esc> 		<nop>
-inoremap <Up> 		<nop>
-inoremap <Down> 	<nop>
-inoremap <Right> 	<nop>
-inoremap <Left>		<nop>
-nnoremap <Up> 		<nop>
-nnoremap <Down> 	<nop>
-nnoremap <Right> 	<nop>
-nnoremap <Left> 	<nop>
-vnoremap <Up> 		<nop>
-vnoremap <Down> 	<nop>
-vnoremap <Right> 	<nop>
-vnoremap <Left> 	<nop> 
-
 inoremap <leader>t <ESC>A
 inoremap <leader>h <ESC>I
 inoremap <leader>n <ESC>2li
+
+nnoremap <leader>c :noh<CR>
+inoremap <leader>c <ESC>:noh<CR>
 
 inoremap <leader>sh <ESC>:sh<CR>
 nnoremap <leader>sh <ESC>:sh<CR>

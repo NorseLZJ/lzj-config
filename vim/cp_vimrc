@@ -82,6 +82,9 @@ inoremap <leader>t <ESC>A
 inoremap <leader>h <ESC>I
 inoremap <leader>n <ESC>2li
 
+nnoremap <leader>c :noh<CR>
+inoremap <leader>c <ESC>:noh<CR>
+
 " fast edit and update .vimrc 
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -236,3 +239,11 @@ let c_no_curly_error=1
 let g:python3_host_prog = "/usr/bin/python3.6"
 set runtimepath+=~/path/to/deoplete.nvim/
 let g:deoplete#enable_at_startup=1
+
+
+
+
+
+
+
+
