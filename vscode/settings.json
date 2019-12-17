@@ -1,5 +1,5 @@
 {
-	// search
+    // search
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/bower_components": true,
@@ -20,9 +20,8 @@
 		"library/":true,
 		"local/":true,
 		"temp/":true,
-	},
-
-	// vim
+    },
+    // vim
 	"vim.easymotion": false,
 	"vim.statusBarColorControl": false,
 	"vim.hlsearch": true,
@@ -37,7 +36,7 @@
 		"<C-v>": false 
 	},
 
-	"vim.normalModeKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
 		{
 		"before" : ["Z","Z"],
 		"commands": [":wq"]
@@ -63,24 +62,21 @@
 		"after": ["<ESC>"]
 		}
 	],
-  
     // editor
-	"editor.tabSize": 4,
-	"editor.fontSize": 14,
-	"files.autoSave": "off",
-	"editor.renderWhitespace": "none",
-	"editor.cursorStyle": "line",
-	"editor.wordWrap": "off",
-	"editor.formatOnSave": false,
-	"editor.fontWeight": "normal",
-	"editor.lineNumbers": "on",  
-	"editor.minimap.enabled": false,
+    "editor.tabSize": 4,
+    "editor.fontSize": 14,
+    "files.autoSave": "off",
+    "editor.renderWhitespace": "none",
+    "editor.cursorStyle": "line",
+    "editor.wordWrap": "off",
+    "editor.formatOnSave": false,
+    "editor.fontWeight": "normal",
+    "editor.lineNumbers": "on",  
+    "editor.minimap.enabled": false,
 
-	// workbench
-	"workbench.colorTheme": "Darcula",
-	"workbench.editor.showIcons": true,
-	"go.formatTool": "goimports",
-	"go.useLanguageServer": true,
-	"workbench.iconTheme": "vscode-icons-mac",
-	"workbench.editor.enablePreview": false,
-}	
+    // workbench
+    "workbench.editor.showIcons": true,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "workbench.editor.enablePreview": false,
+}
