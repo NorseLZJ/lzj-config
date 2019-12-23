@@ -353,6 +353,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (find-file "~/.spacemacs"))
   (global-set-key (kbd "<f2>") 'lzj-open-config)
 
+  (global-set-key (kbd "<f5>") 'spacemacs-buffer/goto-buffer)
+
+
   ;;(load-theme 'django)
 
 ;;; save & shutdown when we get an "end of session" signal on dbus 
