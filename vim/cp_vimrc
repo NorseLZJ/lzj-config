@@ -1,3 +1,4 @@
+
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'valloric/youcompleteme'
@@ -11,8 +12,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/json-formatter.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'Shougo/deoplete.nvim'
 Plug 'chun-yang/auto-pairs'
+Plug 'tbastos/vim-lua'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.vim'
 
 call plug#end()
 
@@ -48,13 +52,16 @@ set nocursorcolumn              " Do not highlight column (speeds up highlightin
 set nocursorline                " Do not highlight cursor (speeds up highlighting)
 set lazyredraw                  " Wait to redraw
 colorscheme darcula 			"colorscheme
-set ts=4
 set mouse=""
 set cursorline
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+
+set ts=4
+set expandtab
+set autoindent 
 
 " reopening a file
 if has("autocmd")
@@ -209,15 +216,28 @@ let g:cpp_no_function_highlight = 1
 let c_no_curly_error=1
 
 " c
-
-let g:python3_host_prog = "/usr/bin/python3.6"
+let g:python3_host_prog = "/usr/bin/python3.7"
 set runtimepath+=~/path/to/deoplete.nvim/
 let g:deoplete#enable_at_startup=1
 
+" lua
+let g:lua_syntax_someoption = 1
 
+" markdown
+nnoremap mk :MarkdownPreview<CR>
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+let g:markdown_syntax_conceal = 0
+let g:markdown_minlines = 100
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_level = 6
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
 
-
-
+let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
 
 
 
