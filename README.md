@@ -10,8 +10,8 @@
 
 **2:emacs  & spacemacs  (有emacs & spacemacs 两种的配置文件随意选则)**  
     * 推荐使用spacemacs 配置简单，只需要添加对应的layer，加一点简单的配置，就可以使用，  
-     如果是觉得启动速度慢可以使用 emacs --daemon 解决 
-    [emacs --daemon](https://www.emacswiki.org/emacs/EmacsAsDaemon)
+     如果是觉得启动速度慢可以使用 emacs --daemon 解决  
+    [emacs --daemon](https://www.emacswiki.org/emacs/EmacsAsDaemon)  
     [emacs layer](https://www.spacemacs.org/layers/LAYERS.html)
 
 **3:IDEA (Goland,CLion,WebStorm,...)这里提供的是一个 .ideavimrc的配置文件，如果你不使用vim请跳过**  
