@@ -268,7 +268,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t 
+   dotspacemacs-maximized-at-startup nil 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -352,8 +352,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (interactive)
     (find-file "~/.spacemacs"))
   (global-set-key (kbd "<f2>") 'lzj-open-config)
-
   (global-set-key (kbd "<f5>") 'spacemacs-buffer/goto-buffer)
+  (global-set-key (kbd "<f6>") 'markdown-live-preview-mode)
 
 
   ;;(load-theme 'django)
@@ -407,7 +407,11 @@ you should place your code here."
   (setq x-select-enable-clipboard-manager nil)
   (setq-default evil-escape-key-sequence "jk")
   (setq markdown-command "pandoc")
-  )
+
+  '((c-c++ :variable c-c++-enable-clang-support t
+           c-c++-default-mode-for-headers 'c++-mode))
+
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
