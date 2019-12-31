@@ -133,4 +133,8 @@
 	"scm.defaultViewMode": "tree",
 	"terminal.integrated.cursorStyle": "underline",
 	"terminal.integrated.fontWeightBold": "normal",
+
+
+    // other
+    "C_Cpp.updateChannel": "Insiders"
 }
