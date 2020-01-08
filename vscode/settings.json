@@ -24,16 +24,16 @@
 	"vim.easymotion": false,
 	"vim.statusBarColorControl": false,
 	"vim.hlsearch": true,
-	"vim.autoindent": true,
+	//"vim.autoindent": true,
 	"vim.useSystemClipboard":true ,
 	"vim.leader": "\\",
 
-	"vim.handleKeys": {
-		"<C-d>": true,
-		"<C-f>":false, 
-		"<C-c>": false,
-		"<C-v>": false 
-	},
+	//"vim.handleKeys": {
+	//	"<C-d>": true,
+	//	"<C-f>":false, 
+	//	"<C-c>": false,
+	//	"<C-v>": false 
+	//},
 
     "vim.normalModeKeyBindingsNonRecursive": [
 		{
@@ -102,7 +102,7 @@
 	 "editor.codeActionsOnSave": {
 		 "source.organizeImports": true
 	 }
- },
+ 	},
 
  "go.toolsEnvVars": {
 	 "GO111MODULE":"off",
@@ -143,4 +143,5 @@
 	"window.zoomLevel": 0,
 	"http.proxySupport": "off",
 	"workbench.iconTheme": "vscode-icons",
+	"go.lintOnSave": "off",
 }
