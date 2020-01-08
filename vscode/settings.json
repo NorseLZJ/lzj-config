@@ -52,8 +52,11 @@
 		"before" : ["<leader>","v","p"],
 		"commands": [":vsplit"]
 		},
+		{
+		"before" : ["<leader>","c"],
+		"commands": [":noh"]
+		},
 	], 
-
 
 	"vim.insertModeKeyBindings": [
 		{
@@ -63,7 +66,7 @@
 	],
     // editor
     "editor.tabSize": 4,
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "files.autoSave": "off",
     "editor.renderWhitespace": "none",
     "editor.cursorStyle": "line",
@@ -74,67 +77,70 @@
     "editor.minimap.enabled": false,
 	// workbench
     "workbench.editor.showIcons": true,
-    "go.useLanguageServer": true,
     "workbench.editor.enablePreview": false,
-
-    // go
-	"go.goroot": "/usr/local/go/",
-	"go.gopath": "~/go/src/",
-	"go.toolsGopath": "~/go/bin/",
-	"go.inferGopath": true,
-	"go.buildOnSave": "off",
-	"go.lintTool": "golangci-lint",
-	"go.lintFlags": ["--disable-all"],
-	"go.vetFlags": [],
-	"go.autocompleteUnimportedPackages":true,
-	"go.gotoSymbol.includeImports": true,
-	"go.useCodeSnippetsOnFunctionSuggest": true,
-	"go.docsTool": "gogetdoc",
-
-	"[go]":{
-		"editor.insertSpaces": false,
-		"editor.formatOnSave": true,
-		"editor.codeActionsOnSave": {
-			"source.organizeImports": true
-		}
-	},
-
-	"go.toolsEnvVars": {
-		"GO111MODULE":"off",
-		"GOPROXY":"https://goproxy.cn,direct",
-		"GOSUMDB":"gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6",
-	},
-
-	"go.languageServerExperimentalFeatures": {
-		"format": true,
-		"autoComplete": true,
-		"rename": true,
-		"goToDefinition": true,
-		"hover": true,
-		"signatureHelp": true,
-		"goToTypeDefinition": false,
-		"goToImplementation": false,
-		"documentSymbols": true,
-		"workspaceSymbols": true,
-		"findReferences": true,
-		"diagnostics": false,
-		"documentLink": true,
-		"highlight": true
-	},
-	"go.languageServerFlags":[
-		"-rpc.trace",
-		"serve",
-		"--debug=localhost:6060",
-	],
-	"go.gocodeAutoBuild": true,
-	"go.gotoSymbol.includeGoroot": true,
-	"workbench.colorTheme": "Dracula",
-	"http.proxy": "https://goproxy.cn",
 	"scm.defaultViewMode": "tree",
 	"terminal.integrated.cursorStyle": "underline",
 	"terminal.integrated.fontWeightBold": "normal",
+ // go
+ "go.useLanguageServer": true,
+ "go.goroot": "/usr/local/go/",
+ "go.gopath": "~/go/src/",
+ "go.toolsGopath": "~/go/bin/",
+ "go.inferGopath": true,
+ "go.buildOnSave": "off",
+ "go.lintTool": "golangci-lint",
+ "go.lintFlags": ["--disable-all"],
+ "go.vetFlags": [],
+ "go.autocompleteUnimportedPackages":true,
+ "go.gotoSymbol.includeImports": true,
+ "go.useCodeSnippetsOnFunctionSuggest": true,
+ "go.docsTool": "gogetdoc",
 
+ "[go]":{
+	 "editor.insertSpaces": false,
+	 "editor.formatOnSave": true,
+	 "editor.codeActionsOnSave": {
+		 "source.organizeImports": true
+	 }
+ },
 
+ "go.toolsEnvVars": {
+	 "GO111MODULE":"off",
+	 "GOPROXY":"https://goproxy.cn,direct",
+	 "GOSUMDB":"gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6",
+ },
+
+ "go.languageServerExperimentalFeatures": {
+	 "format": true,
+	 "autoComplete": true,
+	 "rename": true,
+	 "goToDefinition": true,
+	 "hover": true,
+	 "signatureHelp": true,
+	 "goToTypeDefinition": false,
+	 "goToImplementation": false,
+	 "documentSymbols": true,
+	 "workspaceSymbols": true,
+	 "findReferences": true,
+	 "diagnostics": false,
+	 "documentLink": true,
+	 "highlight": true
+ },
+ "go.languageServerFlags":[
+	 "-rpc.trace",
+	 "serve",
+	 "--debug=localhost:6060",
+ ],
+ "go.gocodeAutoBuild": true,
+ "go.gotoSymbol.includeGoroot": true,
+ 
     // other
-    "C_Cpp.updateChannel": "Insiders"
+	"C_Cpp.updateChannel": "Insiders",
+	"C_Cpp.clang_format_sortIncludes": true,
+	"C_Cpp.default.cppStandard": "c++14",
+	"C_Cpp.default.cStandard": "c11",
+	"C_Cpp.default.intelliSenseMode": "gcc-x64",
+	"window.zoomLevel": 0,
+	"http.proxySupport": "off",
+	"workbench.iconTheme": "vscode-icons",
 }
