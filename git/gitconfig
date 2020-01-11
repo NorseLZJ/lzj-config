@@ -1,0 +1,8 @@
+[user]
+	name = lzj
+	email = 18841685054@163.com
+[alias]
+	st = status
+	br = branch -vv
+	cia = commit -a -m
+	co = checkout
