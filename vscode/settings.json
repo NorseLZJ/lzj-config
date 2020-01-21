@@ -27,15 +27,9 @@
 	//"vim.autoindent": true,
 	"vim.useSystemClipboard":true ,
 	"vim.leader": "\\",
+	"vim.showcmd": true,	
 
-	//"vim.handleKeys": {
-	//	"<C-d>": true,
-	//	"<C-f>":false, 
-	//	"<C-c>": false,
-	//	"<C-v>": false 
-	//},
-
-    "vim.normalModeKeyBindingsNonRecursive": [
+	"vim.normalModeKeyBindingsNonRecursive": [
 		{
 		"before" : ["Z","Z"],
 		"commands": [":wq"]
@@ -74,74 +68,74 @@
     "editor.formatOnSave": false,
     "editor.fontWeight": "normal",
     "editor.lineNumbers": "on",  
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
 	// workbench
     "workbench.editor.showIcons": true,
     "workbench.editor.enablePreview": false,
 	"scm.defaultViewMode": "tree",
 	"terminal.integrated.cursorStyle": "underline",
 	"terminal.integrated.fontWeightBold": "normal",
- // go
- "go.useLanguageServer": true,
- "go.goroot": "/usr/local/go/",
- "go.gopath": "~/go/src/",
- "go.toolsGopath": "~/go/bin/",
- "go.inferGopath": true,
- "go.buildOnSave": "off",
- "go.lintTool": "golangci-lint",
- "go.lintFlags": ["--disable-all"],
- "go.vetFlags": [],
- "go.autocompleteUnimportedPackages":true,
- "go.gotoSymbol.includeImports": true,
- "go.useCodeSnippetsOnFunctionSuggest": true,
- "go.docsTool": "gogetdoc",
+    // go
+    "go.useLanguageServer": true,
+    "go.goroot": "/usr/local/go/",
+    "go.gopath": "~/go/src/",
+    "go.toolsGopath": "~/go/bin/",
+    "go.inferGopath": true,
+    "go.buildOnSave": "off",
+    "go.lintFlags": ["--disable-all"],
+    "go.vetFlags": [],
+    "go.autocompleteUnimportedPackages":true,
+    "go.gotoSymbol.includeImports": true,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.docsTool": "gogetdoc",
 
- "[go]":{
-	 "editor.insertSpaces": false,
-	 "editor.formatOnSave": true,
-	 "editor.codeActionsOnSave": {
-		 "source.organizeImports": true
-	 }
- 	},
+    "[go]":{
+   	 "editor.insertSpaces": false,
+   	 "editor.formatOnSave": true,
+   	 "editor.codeActionsOnSave": {
+   		 "source.organizeImports": true
+   	 }
+    },
 
- "go.toolsEnvVars": {
-	 "GO111MODULE":"off",
-	 "GOPROXY":"https://goproxy.cn,direct",
-	 "GOSUMDB":"gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6",
- },
+   "go.toolsEnvVars": {
+  	 "GO111MODULE":"off",
+  	 "GOPROXY":"https://goproxy.cn,direct",
+  	 "GOSUMDB":"gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6",
+   },
 
- "go.languageServerExperimentalFeatures": {
-	 "format": true,
-	 "autoComplete": true,
-	 "rename": true,
-	 "goToDefinition": true,
-	 "hover": true,
-	 "signatureHelp": true,
-	 "goToTypeDefinition": false,
-	 "goToImplementation": false,
-	 "documentSymbols": true,
-	 "workspaceSymbols": true,
-	 "findReferences": true,
-	 "diagnostics": false,
-	 "documentLink": true,
-	 "highlight": true
- },
- "go.languageServerFlags":[
-	 "-rpc.trace",
-	 "serve",
-	 "--debug=localhost:6060",
- ],
- "go.gocodeAutoBuild": true,
- "go.gotoSymbol.includeGoroot": true,
- 
-    // other
-	"C_Cpp.updateChannel": "Insiders",
-	"C_Cpp.clang_format_sortIncludes": true,
-	"C_Cpp.default.cppStandard": "c++14",
-	"C_Cpp.default.cStandard": "c11",
-	"C_Cpp.default.intelliSenseMode": "gcc-x64",
-	"window.zoomLevel": 0,
-	"http.proxySupport": "off",
-	"workbench.iconTheme": "vscode-icons",
-	"go.lintOnSave": "off",
-}
+   "go.languageServerExperimentalFeatures": {
+  	 "format": true,
+  	 "autoComplete": true,
+  	 "rename": true,
+  	 "goToDefinition": true,
+  	 "hover": true,
+  	 "signatureHelp": true,
+  	 "goToTypeDefinition": false,
+  	 "goToImplementation": false,
+  	 "documentSymbols": true,
+  	 "workspaceSymbols": true,
+  	 "findReferences": true,
+  	 "diagnostics": false,
+  	 "documentLink": true,
+  	 "highlight": true
+   },
+   "go.languageServerFlags":[
+  	 "-rpc.trace",
+  	 "serve",
+  	 "--debug=localhost:6060",
+   ],
+   "go.gocodeAutoBuild": true,
+   "go.gotoSymbol.includeGoroot": true,
+   
+      // other
+  	"C_Cpp.updateChannel": "Insiders",
+  	"C_Cpp.clang_format_sortIncludes": true,
+  	"C_Cpp.default.cppStandard": "c++14",
+  	"C_Cpp.default.cStandard": "c11",
+  	"C_Cpp.default.intelliSenseMode": "gcc-x64",
+  	"window.zoomLevel": 0,
+  	"http.proxySupport": "off",
+  	"workbench.iconTheme": "vscode-icons",
+  	"go.lintOnSave": "off",
+  	"workbench.colorTheme": "Darcula",
+  	}
