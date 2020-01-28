@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'valloric/youcompleteme'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'stamblerre/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'volgar1x/vim-gocode'
@@ -49,7 +50,7 @@ set pumheight=10                " Completion window max size
 set nocursorcolumn              " Do not highlight column (speeds up highlighting)
 set nocursorline                " Do not highlight cursor (speeds up highlighting)
 set lazyredraw                  " Wait to redraw
-"colorscheme darcula 			"colorscheme
+colorscheme darcula 			"colorscheme
 set mouse=""
 set cursorline
 set cmdheight=2
@@ -68,6 +69,10 @@ endif
 
 let mapleader='\'
 let g:mapleader='\'
+
+inoremap <leader>t <ESC>A
+inoremap <leader>h <ESC>I
+inoremap <leader>n <ESC>2li
 
 nnoremap <leader>c :noh<CR>
 inoremap <leader>c <ESC>:noh<CR>
@@ -196,7 +201,7 @@ let g:tagbar_type_go = {
 \ }
 
 " format json
-nnoremap fjs :call JsonFormatter()<cr>
+nnoremap fs :call JsonFormatter()<cr>
 
 " cpp
 let g:cpp_class_scope_highlight = 1
@@ -208,6 +213,11 @@ let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 1
 let c_no_curly_error=1
+
+" c
+let g:python3_host_prog = "/usr/bin/python3.7"
+set runtimepath+=~/path/to/deoplete.nvim/
+let g:deoplete#enable_at_startup=1
 
 " lua
 let g:lua_syntax_someoption = 1
