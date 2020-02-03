@@ -11,7 +11,7 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "SpaceVim"
+    colorscheme = "onedark"
     colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
@@ -22,9 +22,9 @@
     statusline_inactive_separator = "bar"
     buffer_index_type = 4
     windows_index_type = 3
-    enable_tabline_filetype_icon = true 
-    enable_statusline_mode = true 
-    statusline_unicode_symbols = true 
+    enable_tabline_filetype_icon = false 
+    enable_statusline_mode = false 
+    statusline_unicode_symbols = false 
     # Enable vim compatible mode, avoid changing origin vim key bindings
     vimcompatible = true
     guifont = "DejaVu\ Sans\ Mono\ for\ Powerline\ 11"
@@ -45,27 +45,31 @@ default_height = 30
 
 [[layers]]
 name = 'lang#go'
-
 [[layers]]
 name = 'colorscheme'
-
 [[layers]]
 name = 'lang#markdown'
-
 [[layers]]
 name = 'lang#lua'
-
 [[layers]]
 name = 'lang#lisp'
-
 [[layers]]
 name = 'lang#c'
-
 [[layers]]
 name = 'lang#python'
-
+[[layers]]
+name = 'lang#javascript'
+[[layers]]
+name = 'lang#java'
+[[layers]]
+name = 'lang#vim'
+[[layers]]
+name = 'lang#erlang'
 [[layers]]
 name = 'git'
-
 [[layers]]
 name = 'tmux'
+[[layers]]
+name = 'ctrlp'
+[[layers]]
+name = 'default'
