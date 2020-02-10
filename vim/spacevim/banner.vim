@@ -11,15 +11,10 @@ function! SpaceVim#layers#core#banner#config() abort
   let g:_spacevim_welcome_banners = [
         \ [
         \ '',
-        \ '',
-        \ ' --- Spacevim ---',
-        \ '',
         \ ' version : ' . g:spacevim_version . '   by : spacevim.org',
         \ '',
         \ ],
         \ [
-        \ '',
-        \ ' *** SpaceVim ***                     ',
         \ '',
         \ ' version : ' . g:spacevim_version . '   by : spacevim.org',
         \ '',
