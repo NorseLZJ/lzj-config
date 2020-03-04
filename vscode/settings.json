@@ -12,19 +12,23 @@
   	// file
 	"files.exclude":{
 		"**/.git": true,
-		"**/.svn": true, "**/.hg": true,
+		"**/.svn": true,
+		"**/.hg": true,
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/.meta": true,
-		"library/":true,
-		"local/":true,
-		"temp/":true,
-    },
+		"library/": true,
+		"local/": true,
+		"temp/": true,
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
     // vim
 	"vim.easymotion": false,
 	"vim.statusBarColorControl": false,
 	"vim.hlsearch": true,
-	//"vim.autoindent": true,
 	"vim.useSystemClipboard":true ,
 	"vim.leader": "\\",
 	"vim.showcmd": true,	
@@ -60,7 +64,7 @@
 	],
     // editor
     "editor.tabSize": 4,
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "files.autoSave": "off",
     "editor.renderWhitespace": "none",
     "editor.cursorStyle": "line",
@@ -68,7 +72,7 @@
     "editor.formatOnSave": false,
     "editor.fontWeight": "normal",
     "editor.lineNumbers": "on",  
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
 	// workbench
     "workbench.editor.showIcons": true,
     "workbench.editor.enablePreview": false,
@@ -137,5 +141,9 @@
   	"http.proxySupport": "off",
   	"workbench.iconTheme": "vscode-icons",
   	"go.lintOnSave": "off",
-  	"workbench.colorTheme": "Darcula",
+	"workbench.colorTheme": "Darcula",
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"explorer.confirmDelete": false,
+	"explorer.autoReveal": false,
   	}
