@@ -1,25 +1,31 @@
-call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'valloric/youcompleteme'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'stamblerre/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'volgar1x/vim-gocode'
-Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/json-formatter.vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'chun-yang/auto-pairs'
-Plug 'tbastos/vim-lua'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.vim'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-call plug#end()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plugin 'stamblerre/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plugin 'volgar1x/vim-gocode'
+Plugin 'mhinz/vim-startify'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/json-formatter.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'chun-yang/auto-pairs'
+Plugin 'tbastos/vim-lua'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'iamcco/markdown-preview.vim'
+Plugin 'valloric/youcompleteme'
 
-"base
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set nocompatible                " Enables us Vim specific features
 filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
@@ -69,10 +75,6 @@ endif
 
 let mapleader='\'
 let g:mapleader='\'
-
-inoremap <leader>t <ESC>A
-inoremap <leader>h <ESC>I
-inoremap <leader>n <ESC>2li
 
 nnoremap <leader>c :noh<CR>
 inoremap <leader>c <ESC>:noh<CR>
@@ -201,7 +203,7 @@ let g:tagbar_type_go = {
 \ }
 
 " format json
-nnoremap fs :call JsonFormatter()<cr>
+nnoremap fjs :call JsonFormatter()<cr>
 
 " cpp
 let g:cpp_class_scope_highlight = 1
@@ -213,11 +215,6 @@ let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 1
 let c_no_curly_error=1
-
-" c
-let g:python3_host_prog = "/usr/bin/python3.7"
-set runtimepath+=~/path/to/deoplete.nvim/
-let g:deoplete#enable_at_startup=1
 
 " lua
 let g:lua_syntax_someoption = 1
@@ -237,6 +234,3 @@ let g:vim_markdown_json_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
-
-
-
