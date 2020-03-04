@@ -1,31 +1,30 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'stamblerre/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'volgar1x/vim-gocode'
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/json-formatter.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'chun-yang/auto-pairs'
+Plug 'tbastos/vim-lua'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plugin 'stamblerre/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plugin 'volgar1x/vim-gocode'
-Plugin 'mhinz/vim-startify'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/json-formatter.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'chun-yang/auto-pairs'
-Plugin 'tbastos/vim-lua'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'valloric/youcompleteme'
+call plug#end()
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+"base
 set nocompatible                " Enables us Vim specific features
 filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
@@ -56,7 +55,7 @@ set pumheight=10                " Completion window max size
 set nocursorcolumn              " Do not highlight column (speeds up highlighting)
 set nocursorline                " Do not highlight cursor (speeds up highlighting)
 set lazyredraw                  " Wait to redraw
-colorscheme darcula 			"colorscheme
+"colorscheme darcula 			"colorscheme
 set mouse=""
 set cursorline
 set cmdheight=2
@@ -75,6 +74,10 @@ endif
 
 let mapleader='\'
 let g:mapleader='\'
+
+inoremap <leader>t <ESC>A
+inoremap <leader>h <ESC>I
+inoremap <leader>n <ESC>2li
 
 nnoremap <leader>c :noh<CR>
 inoremap <leader>c <ESC>:noh<CR>
@@ -203,7 +206,7 @@ let g:tagbar_type_go = {
 \ }
 
 " format json
-nnoremap fjs :call JsonFormatter()<cr>
+nnoremap fs :call JsonFormatter()<cr>
 
 " cpp
 let g:cpp_class_scope_highlight = 1
@@ -234,3 +237,26 @@ let g:vim_markdown_json_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+let g:javascript_conceal_function             = "Æ’"
+let g:javascript_conceal_null                 = "Ã¸"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "â‡š"
+let g:javascript_conceal_undefined            = "Â¿"
+let g:javascript_conceal_NaN                  = "â„•"
+let g:javascript_conceal_prototype            = "Â¶"
+let g:javascript_conceal_static               = "â€¢"
+let g:javascript_conceal_super                = "Î©"
+let g:javascript_conceal_arrow_function       = "â‡’"
+let g:javascript_conceal_noarg_arrow_function = "í ½í¾…"
+let g:javascript_conceal_underscore_arrow_function = "í ½í¾…"
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+
+let g:vim_jsx_pretty_colorful_config = 1 " default 0"
