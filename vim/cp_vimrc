@@ -16,10 +16,10 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'yuezk/vim-js'
+"Plug 'mxw/vim-jsx'
+"Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'maxmellon/vim-jsx-pretty'
 Plug 'valloric/youcompleteme'
 
 call plug#end()
@@ -61,10 +61,10 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-
 set ts=4
 set expandtab
 set autoindent 
+set splitright
 
 " reopening a file
 if has("autocmd")
@@ -95,6 +95,10 @@ noremap <C-l> <C-w>l
 
 nnoremap <leader>vp <ESC>:vsplit<CR>
 nnoremap <leader>sp <ESC>:split<CR>
+
+nnoremap sj /
+nnoremap sk ?
+nnoremap rs :%s/v1/v2/g
 
 " NERDTree open
 map <F8> :NERDTreeToggle<CR>
