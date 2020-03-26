@@ -1,0 +1,6 @@
+
+docker rm lookupd
+docker rmi image
+docker ps -qa
+docker rm $(docker ps -qa)
+docker exec -it lookupd /bin/sh
