@@ -16,17 +16,16 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'mxw/vim-jsx'
+"Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'maxmellon/vim-jsx-pretty'
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
 "base
 set nocompatible                " Enables us Vim specific features
-filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
 set ttyfast                     " Indicate fast terminal conn for faster redraw
 set laststatus=2                " Show status line always
@@ -62,10 +61,10 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-
 set ts=4
 set expandtab
 set autoindent 
+set splitright
 
 " reopening a file
 if has("autocmd")
@@ -75,20 +74,15 @@ endif
 let mapleader='\'
 let g:mapleader='\'
 
-inoremap <leader>t <ESC>A
-inoremap <leader>h <ESC>I
-inoremap <leader>n <ESC>2li
+inoremap jk <Esc>
 
 nnoremap <leader>c :noh<CR>
-inoremap <leader>c <ESC>:noh<CR>
 
 " fast edit and update .vimrc 
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-inoremap <leader>w <Esc>:w<cr> 
-nnoremap <leader>w <Esc>:w<cr> 
-inoremap jk <Esc>
+nnoremap <leader>w <Esc>:w<Cr> 
      
 noremap <silent> [b :bprevious<CR>
 noremap <silent> [n :bnext<CR>
@@ -99,10 +93,12 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-inoremap <leader>vp <ESC>:vsplit<CR>
-inoremap <leader>sp <ESC>:split<CR>
 nnoremap <leader>vp <ESC>:vsplit<CR>
 nnoremap <leader>sp <ESC>:split<CR>
+
+nnoremap fj /
+nnoremap fk ?
+nnoremap cs :%s///g
 
 " NERDTree open
 map <F8> :NERDTreeToggle<CR>
@@ -111,7 +107,6 @@ let g:NERDTreeDirArrowExpandable=">"
 let g:NERDTreeDirArrowCollapsible="v"
 
 "set clipboard+=unnamedplus
-
 let g:clipboard = {
   \   'name': 'xclip-xfce4-clipman',
   \   'copy': {
@@ -135,7 +130,6 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_generate_tags = 1
-
 
 augroup go
   autocmd!
@@ -172,7 +166,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-
 
 " tagbar
 nmap <F6> :TagbarToggle<CR>
@@ -253,10 +246,11 @@ let g:javascript_conceal_super                = "Î©"
 let g:javascript_conceal_arrow_function       = "â‡’"
 let g:javascript_conceal_noarg_arrow_function = "í ½í¾…"
 let g:javascript_conceal_underscore_arrow_function = "í ½í¾…"
+
+let g:vim_jsx_pretty_colorful_config = 1 " default 0"
+
 augroup javascript_folding
     au!
     au FileType javascript setlocal foldmethod=syntax
 augroup END
 
-
-let g:vim_jsx_pretty_colorful_config = 1 " default 0"

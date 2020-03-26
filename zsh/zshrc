@@ -2,14 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/rs/.oh-my-zsh"
+export ZSH="/home/lzj/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="half-life"
 #ZSH_THEME="half-life"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -18,11 +19,11 @@ ZSH_THEME="half-life"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -101,14 +102,26 @@ source $ZSH/oh-my-zsh.sh
 
 
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
+#export GOPATH=/home/lzj/ws/git/gmys_server
+export GOPATH=~/go
+#export GOPATH=$HOME/ws/git/gmys_serve
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:$GOROOT/bin
-export GOPROXY=https://goproxy.cn
+export GOPROXY='https://goproxy.cn'
 
+# alias 
+alias cat='ccat'
+alias vi='vim'
+alias nvi='nvim'
+alias pyd='pydoc3.7'
+alias py='python3.7'
 alias em='emacsclient -t'
-alias mycli='mycli -u root -p 123456'
-alias pfg='ps -ef | grep $1'
+alias m57='mycli -P 3307 -u root -p 123456'
+alias m80='mycli -P 3306 -u root -p 123456'
 alias nsg='netstat -npl | grep $1'
-
-
+alias psg='ps -ef | grep $1'
+alias pug='ps aux | grep $1'
+alias ts='tmux attach-session -t $1'
+alias tk='tmux kill-session -t $1'
+alias tl='tmux ls'
+alias tsw='tmux select-window -t $1'
