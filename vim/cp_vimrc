@@ -96,9 +96,9 @@ noremap <C-l> <C-w>l
 nnoremap <leader>vp <ESC>:vsplit<CR>
 nnoremap <leader>sp <ESC>:split<CR>
 
-nnoremap sj /
-nnoremap sk ?
-nnoremap rs :%s/v1/v2/g
+nnoremap fj /
+nnoremap fk ?
+nnoremap cs :%s///g
 
 " NERDTree open
 map <F8> :NERDTreeToggle<CR>
