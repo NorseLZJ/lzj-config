@@ -15,11 +15,6 @@ Plug 'tbastos/vim-lua'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
-Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
-"Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-"Plug 'maxmellon/vim-jsx-pretty'
 Plug 'valloric/youcompleteme'
 
 call plug#end()
@@ -230,27 +225,3 @@ let g:vim_markdown_json_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_no_extensions_in_markdown = 1
-
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-let g:javascript_conceal_function             = "Æ’"
-let g:javascript_conceal_null                 = "Ã¸"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "â‡š"
-let g:javascript_conceal_undefined            = "Â¿"
-let g:javascript_conceal_NaN                  = "â„•"
-let g:javascript_conceal_prototype            = "Â¶"
-let g:javascript_conceal_static               = "â€¢"
-let g:javascript_conceal_super                = "Î©"
-let g:javascript_conceal_arrow_function       = "â‡’"
-let g:javascript_conceal_noarg_arrow_function = "í ½í¾…"
-let g:javascript_conceal_underscore_arrow_function = "í ½í¾…"
-
-let g:vim_jsx_pretty_colorful_config = 1 " default 0"
-
-augroup javascript_folding
-    au!
-    au FileType javascript setlocal foldmethod=syntax
-augroup END
-
