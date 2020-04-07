@@ -15,7 +15,8 @@ then
 docker exec -it mysql_3307 /bin/bash
 elif [ "$1" = 'conn' ]; 
 then
-mycli -h 172.17.0.2 -p 3306 -u root  
+# get ip :docker inspect mysql_3307 | grep IPAddress
+mycli -h 172.17.0.3 -p 3307 -u root  
 else
 echo "no match option!!!"
 fi
@@ -32,5 +33,9 @@ fi
 
 # 配置远程登录 
 # 1:CREATE USER 'root'@'%' IDENTIFIED BY 'root';
-# 2:GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+# 2:GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION; (所有权限)
 # 3:flush privileges;
+
+# 4:CREATE USER 'lzj'@'%' IDENTIFIED BY '123456';
+# 5:GRANT SELECT ON *.* TO 'lzj'@'%' WITH GRANT OPTION; (只读权限)
+
