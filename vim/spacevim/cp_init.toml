@@ -12,7 +12,7 @@
     # if you want to use more colorscheme, please load the colorscheme
     # layer
     colorscheme = "gruvbox"
-    colorscheme_bg = "dark"
+    colorscheme_bg = "light"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
@@ -26,7 +26,7 @@
     spacevim_enable_statusline_mode = 1 
     spacevim_filetree_direction = 'right'
     spacevim_enable_vimfiler_welcome = 0
-
+    spacevim_default_indent = 3 
 
 # Enable autocomplete layer
 [[layers]]
@@ -38,3 +38,22 @@ auto-completion-tab-key-behavior = "smart"
 name = 'shell'
 default_position = 'top'
 default_height = 30
+
+[[layers]]
+name = "colorscheme"
+[[layers]]
+name = "tmux"
+[[layers]]
+name = "git"
+[[layers]]
+name = "ctrlp"
+
+[[layers]]
+name = "lang#c"
+[[layers]]
+name = "lang#go"
+[[layers]]
+name = "lang#python"
+[[layers]]
+name = "lang#sh"
+

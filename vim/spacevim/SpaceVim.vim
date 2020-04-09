@@ -1,6 +1,7 @@
 scriptencoding utf-8
 let g:spacevim_version = '1.5.0-dev'
 lockvar g:spacevim_version
+let g:indentLine_char = '' 
 let g:spacevim_default_indent          = 2
 let g:spacevim_expand_tab              = 1
 let g:spacevim_relativenumber          = 1
@@ -66,7 +67,7 @@ let g:spacevim_colorscheme             = 'gruvbox'
 let g:spacevim_colorscheme_bg             = 'dark'
 let g:spacevim_colorscheme_default     = 'desert'
 let g:spacevim_filemanager             = 'vimfiler'
-let g:spacevim_filetree_direction             = 'left'
+let g:spacevim_filetree_direction      = 'left'
 let g:spacevim_sidebar_direction        = ''
 if has('patch-7.4.2071')
   let g:spacevim_plugin_manager          = 'dein'
