@@ -177,4 +177,5 @@
 	"html.trace": "verbose",
 	"workbench.sideBar.location": "left",
 	"workbench.editorAssociations": [],
+	"editor.wordWrapColumn": 5000,
 }
