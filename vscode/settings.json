@@ -1,5 +1,5 @@
 {
-    // search
+	// search
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/bower_components": true,
@@ -9,8 +9,8 @@
 		"build/": true,
 		"!/system/.ps*": true,
 	},
-  	// file
-	"files.exclude":{
+	// file
+	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
 		"**/.hg": true,
@@ -25,125 +25,156 @@
 		"**/.settings": true,
 		"**/.factorypath": true
 	},
-    // vim
+	// vim
 	"vim.easymotion": false,
 	"vim.statusBarColorControl": false,
 	"vim.hlsearch": true,
-	"vim.useSystemClipboard":true ,
+	"vim.useSystemClipboard": true,
 	"vim.leader": "\\",
-	"vim.showcmd": true,	
-
+	"vim.showcmd": true,
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
-		"before" : ["Z","Z"],
-		"commands": [":wq"]
+			"before": [
+				"Z",
+				"Z"
+			],
+			"commands": [
+				":wq"
+			]
 		},
 		{
-		"before" : ["<leader>","w"],
-		"commands": [":w"]
+			"before": [
+				"<leader>",
+				"w"
+			],
+			"commands": [
+				":w"
+			]
 		},
 		{
-		"before" : ["<leader>","s","p"],
-		"commands": [":split"]
+			"before": [
+				"<leader>",
+				"s",
+				"p"
+			],
+			"commands": [
+				":split"
+			]
 		},
 		{
-		"before" : ["<leader>","v","p"],
-		"commands": [":vsplit"]
+			"before": [
+				"<leader>",
+				"v",
+				"p"
+			],
+			"commands": [
+				":vsplit"
+			]
 		},
 		{
-		"before" : ["<leader>","c"],
-		"commands": [":noh"]
+			"before": [
+				"<leader>",
+				"c"
+			],
+			"commands": [
+				":noh"
+			]
 		},
-	], 
-
+	],
 	"vim.insertModeKeyBindings": [
 		{
-		"before" : ["j","k"],
-		"after": ["<ESC>"]
+			"before": [
+				"j",
+				"k"
+			],
+			"after": [
+				"<ESC>"
+			]
 		}
 	],
-    // editor
-    "editor.tabSize": 4,
-    "editor.fontSize": 16,
-    "files.autoSave": "off",
-    "editor.renderWhitespace": "none",
-    "editor.cursorStyle": "line",
-    "editor.wordWrap": "off",
-    "editor.formatOnSave": false,
-    "editor.fontWeight": "normal",
-    "editor.lineNumbers": "on",  
-    "editor.minimap.enabled": false,
+	// editor
+	"editor.tabSize": 4,
+	"editor.fontSize": 16,
+	"files.autoSave": "off",
+	"editor.renderWhitespace": "none",
+	"editor.cursorStyle": "line",
+	"editor.wordWrap": "off",
+	"editor.formatOnSave": false,
+	"editor.fontWeight": "normal",
+	"editor.lineNumbers": "on",
+	"editor.minimap.enabled": false,
 	// workbench
-    "workbench.editor.showIcons": true,
-    "workbench.editor.enablePreview": false,
+	"workbench.editor.showIcons": true,
+	"workbench.editor.enablePreview": false,
 	"scm.defaultViewMode": "tree",
 	"terminal.integrated.cursorStyle": "underline",
 	"terminal.integrated.fontWeightBold": "normal",
-    // go
-    "go.useLanguageServer": true,
-    "go.goroot": "/usr/local/go/",
-    "go.gopath": "~/go/src/",
-    "go.toolsGopath": "~/go/bin/",
-    "go.inferGopath": true,
-    "go.buildOnSave": "off",
-    "go.lintFlags": ["--disable-all"],
-    "go.vetFlags": [],
-    "go.autocompleteUnimportedPackages":true,
-    "go.gotoSymbol.includeImports": true,
-    "go.useCodeSnippetsOnFunctionSuggest": true,
-    "go.docsTool": "gogetdoc",
-
-    "[go]":{
-   	 "editor.insertSpaces": false,
-   	 "editor.formatOnSave": true,
-   	 "editor.codeActionsOnSave": {
-   		 "source.organizeImports": true
-   	 }
-    },
-
-   "go.toolsEnvVars": {
-  	 "GO111MODULE":"off",
-  	 "GOPROXY":"https://goproxy.cn,direct",
-  	 "GOSUMDB":"gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6",
-   },
-
-   "go.languageServerExperimentalFeatures": {
-  	 "format": true,
-  	 "autoComplete": true,
-  	 "rename": true,
-  	 "goToDefinition": true,
-  	 "hover": true,
-  	 "signatureHelp": true,
-  	 "goToTypeDefinition": false,
-  	 "goToImplementation": false,
-  	 "documentSymbols": true,
-  	 "workspaceSymbols": true,
-  	 "findReferences": true,
-  	 "diagnostics": false,
-  	 "documentLink": true,
-  	 "highlight": true
-   },
-   "go.languageServerFlags":[
-  	 "-rpc.trace",
-  	 "serve",
-  	 "--debug=localhost:6060",
-   ],
-   "go.gocodeAutoBuild": true,
-   "go.gotoSymbol.includeGoroot": true,
-   
-      // other
-  	"C_Cpp.updateChannel": "Insiders",
-  	"C_Cpp.clang_format_sortIncludes": true,
-  	"C_Cpp.default.cppStandard": "c++14",
-  	"C_Cpp.default.cStandard": "c11",
-  	"C_Cpp.default.intelliSenseMode": "gcc-x64",
-  	"window.zoomLevel": 0,
-  	"http.proxySupport": "off",
-  	"workbench.iconTheme": "vscode-icons",
-  	"go.lintOnSave": "off",
-	"workbench.colorTheme": "Darcula",
+	// go
+	"go.useLanguageServer": true,
+	"go.goroot": "/usr/local/go/",
+	"go.gopath": "~/go/src/",
+	"go.toolsGopath": "~/go/bin/",
+	"go.inferGopath": true,
+	"go.buildOnSave": "off",
+	"go.lintFlags": [
+		"--disable-all"
+	],
+	"go.vetFlags": [],
+	"go.autocompleteUnimportedPackages": true,
+	"go.gotoSymbol.includeImports": true,
+	"go.useCodeSnippetsOnFunctionSuggest": true,
+	"go.docsTool": "gogetdoc",
+	"[go]": {
+		"editor.insertSpaces": false,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		}
+	},
+	"go.toolsEnvVars": {
+		"GO111MODULE": "off",
+		"GOPROXY": "https://goproxy.cn,direct",
+		"GOSUMDB": "gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6",
+	},
+	"go.languageServerExperimentalFeatures": {
+		"format": true,
+		"autoComplete": true,
+		"rename": true,
+		"goToDefinition": true,
+		"hover": true,
+		"signatureHelp": true,
+		"goToTypeDefinition": false,
+		"goToImplementation": false,
+		"documentSymbols": true,
+		"workspaceSymbols": true,
+		"findReferences": true,
+		"diagnostics": false,
+		"documentLink": true,
+		"highlight": true
+	},
+	"go.languageServerFlags": [
+		"-rpc.trace",
+		"serve",
+		"--debug=localhost:6060",
+	],
+	"go.gocodeAutoBuild": true,
+	"go.gotoSymbol.includeGoroot": true,
+	// other
+	"C_Cpp.updateChannel": "Insiders",
+	"C_Cpp.clang_format_sortIncludes": true,
+	"C_Cpp.default.cppStandard": "c++14",
+	"C_Cpp.default.cStandard": "c11",
+	"C_Cpp.default.intelliSenseMode": "gcc-x64",
+	"window.zoomLevel": 0,
+	"http.proxySupport": "off",
+	"workbench.iconTheme": "vscode-icons",
+	"go.lintOnSave": "off",
+	"workbench.colorTheme": "Community Material Theme Ocean",
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"explorer.confirmDelete": false,
 	"explorer.autoReveal": false,
-  	}
+	"html.trace": "verbose",
+	"workbench.sideBar.location": "left",
+	"workbench.editorAssociations": [],
+}
