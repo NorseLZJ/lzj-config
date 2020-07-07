@@ -1,202 +1,106 @@
 {
-	// search
-	"search.exclude": {
-		"**/node_modules": true,
-		"**/bower_components": true,
-		"system/": true,
-		"temp/": true,
-		"library/": true,
-		"build/": true,
-		"!/system/.ps*": true,
-	},
-	// file
-	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.hg": true,
-		"**/CVS": true,
-		"**/.DS_Store": true,
-		"**/.meta": true,
-		"library/": true,
-		"local/": true,
-		"temp/": true,
-		"**/.classpath": true,
-		"**/.project": true,
-		"**/.settings": true,
-		"**/.factorypath": true
-	},
-	// vim
-	"vim.easymotion": false,
-	"vim.statusBarColorControl": false,
-	"vim.hlsearch": true,
-	"vim.autoindent": true,
-	"vim.useSystemClipboard": true,
-	"vim.leader": "\\",
-	"vim.handleKeys": {
-		"<C-d>": true,
-		"<C-f>": true,
-		"<C-c>": true,
-		"<C-v>": true
-	},
-	"vim.normalModeKeyBindingsNonRecursive": [
-		{
-			"before": [
-				"Z",
-				"Z"
-			],
-			"commands": [
-				":wq"
-			]
-		},
-		{
-			"before": [
-				"<leader>",
-				"w"
-			],
-			"commands": [
-				":w"
-			]
-		},
-		{
-			"before": [
-				"<leader>",
-				"c"
-			],
-			"commands": [
-				":noh"
-			]
-		},
-		{
-			"before": [
-				"<leader>",
-				"s",
-				"p"
-			],
-			"commands": [
-				":split"
-			]
-		},
-		{
-			"before": [
-				"<leader>",
-				"v",
-				"p"
-			],
-			"commands": [
-				":vsplit"
-			]
-		},
-	],
-	"vim.insertModeKeyBindings": [
-		{
-			"before": [
-				"j",
-				"k"
-			],
-			"after": [
-				"<ESC>"
-			]
-		}
-	],
-	// editor
-	"editor.tabSize": 4,
-	"editor.fontSize": 16,
-	"editor.renderWhitespace": "none",
-	"editor.cursorStyle": "line",
-	"editor.wordWrap": "on",
-	"editor.formatOnSave": false,
-	"editor.fontWeight": "normal",
-	"editor.lineNumbers": "on",
-	"editor.insertSpaces": true,
-	"editor.links": false,
-	"editor.wordWrapColumn": 5000,
-	// workbench
-	"scm.defaultViewMode": "tree",
-	"terminal.integrated.cursorStyle": "underline",
-	"terminal.integrated.fontWeightBold": "normal",
-	"go.formatTool": "gofmt",
-	"window.zoomLevel": 0,
-	"go.gopath": "D:\\lzj\\go",
-	"go.autocompleteUnimportedPackages": true,
-	"go.useLanguageServer": true,
-	"go.lintOnSave": "off",
-	"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-	"C_Cpp.errorSquiggles": "Disabled",
-	"editor.formatOnPaste": true,
-	"terminal.integrated.fontSize": 16,
-	"explorer.autoReveal": false,
-	"git.autofetch": true,
-	"editor.minimap.maxColumn": 80,
-	"explorer.confirmDelete": false,
-	"editor.maxTokenizationLineLength": 20000000,
-	"remote.SSH.remotePlatform": {
-		"192.168.20.177": "linux"
-	},
-	"workbench.startupEditor": "welcomePage",
-	"docker.containers.label": "ContainerId",
-	"[c]": {
-		"editor.defaultFormatter": "ms-vscode.cpptools"
-	},
-	"debug.onTaskErrors": "debugAnyway",
-	"editor.suggestSelection": "first",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"maven.executable.path": "  ",
-	"go.toolsGopath": "$GOPATH",
-	"[cpp]": {
-		//"editor.defaultFormatter": "xaver.clang-format"
-		"editor.defaultFormatter": "ms-vscode.cpptools"
-	},
-	"files.associations": {},
-	"workbench.editorAssociations": [
-
-	],
-	"workbench.editor.enablePreview": false ,
-	"[javascript]": {
-		"editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-	},
-	"[proto3]": {
-		"editor.defaultFormatter": "zxh404.vscode-proto3"
-	},
-	"python.jediEnabled": false,
-	"go.addTags": {
-
-	},
-	"go.delveConfig": {
-
-	},
-	"go.goroot": "C:\\Go",
-	"go.gotoSymbol.includeGoroot": true,
-	"go.inferGopath": true,
-	"go.gotoSymbol.includeImports": true,
-	"go.languageServerExperimentalFeatures": {
-
-	
-	},
-	"vs-kubernetes": {
-		"vs-kubernetes.kubectl-path.linux": "/home/lzj/.vs-kubernetes/tools/kubectl/kubectl",
-		"vs-kubernetes.minikube-path.linux": "/home/lzj/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
-		"vs-kubernetes.draft-path.linux": "/home/lzj/.vs-kubernetes/tools/draft/linux-amd64/draft"
-	},
-	"java.semanticHighlighting.enabled": true,
-	"[xml]": {
-		"editor.defaultFormatter": "DotJoshJohnson.xml"
-	},
-	"C_Cpp.updateChannel": "Insiders",
-	"workbench.colorTheme": "Monokai",
-	"docker.images.label": "FullTag",
-	"java.requirements.JDK11Warning": false,
-	"org.addLeftZero": true,
-	"org.todoKeywords": [
-		"TODO",
-		"DONE",
-		"SCHD",
-		"WAIT"
-	],
-	"cmake.configureOnOpen": false,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "vim.easymotion": false,
+    "vim.statusBarColorControl": false,
+    "vim.hlsearch": true,
+    "vim.autoindent": true,
+    "vim.useSystemClipboard": true,
+    "vim.leader": "\\",
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-f>": true,
+        "<C-c>": true,
+        "<C-v>": true
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [{
+            "before": [
+                "Z", "Z"
+            ],
+            "commands": [":q!"]
+        },
+        {
+            "before": [
+                "<leader>", "w"
+            ],
+            "commands": [":w"]
+        },
+        {
+            "before": [
+                "<leader>", "c"
+            ],
+            "commands": [":noh"]
+        },
+        {
+            "before": [
+                "<leader>", "s", "p"
+            ],
+            "commands": [":split"]
+        }, {
+            "before": [
+                "<leader>", "v", "p"
+            ],
+            "commands": [":vsplit"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [{
+        "before": [
+            "j", "k"
+        ],
+        "after": ["<ESC>"]
+    }],
+    "editor.tabSize": 4,
+    "editor.fontSize": 16,
+    "editor.renderWhitespace": "none",
+    "editor.cursorStyle": "line",
+    "editor.formatOnSave": true,
+    "editor.fontWeight": "normal",
+    "editor.lineNumbers": "on",
+    "editor.insertSpaces": true,
+    "editor.links": false,
+    "editor.wordWrapColumn": 1200,
+    "scm.defaultViewMode": "tree",
+    "workbench.colorTheme": "Default Dark+",
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.fontWeightBold": "normal",
+    "window.zoomLevel": 0,
+    "go.formatTool": "gofmt",
+    "go.gopath": "/home/lzj/go",
+    "go.autocompleteUnimportedPackages": true,
+    "go.lintOnSave": "off",
+    "go.toolsGopath": "/home/lzj/go/bin",
+    "go.goroot": "/usr/local/go",
+    "go.gotoSymbol.includeGoroot": true,
+    "go.inferGopath": false,
+    "go.gotoSymbol.includeImports": true,
+    "go.languageServerExperimentalFeatures": {},
+    "editor.formatOnPaste": true,
+    "terminal.integrated.fontSize": 16,
+    "explorer.autoReveal": false,
+    "git.autofetch": true,
+    "editor.minimap.maxColumn": 1000,
+    "explorer.confirmDelete": false,
+    "editor.maxTokenizationLineLength": 20000000,
+    "debug.onTaskErrors": "debugAnyway",
+    "editor.suggestSelection": "first",
+    "files.associations": {},
+    "workbench.editorAssociations": [],
+    "workbench.editor.enablePreview": false,
+    "files.defaultLanguage": "cpp",
+    "editor.formatOnType": true,
+    "editor.snippetSuggestions": "top",
+    "workbench.settings.editor": "json",
+    "html.format.endWithNewline": true,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "editor.autoIndent": "keep",
+    "editor.highlightActiveIndentGuide": false,
+    "workbench.tree.renderIndentGuides": "none",
+    "debug.console.wordWrap": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.autocomplete": "Disabled"
 }
