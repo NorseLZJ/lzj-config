@@ -15,7 +15,7 @@ Plug 'tbastos/vim-lua'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
 
 call plug#end()
 
