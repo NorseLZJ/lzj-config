@@ -1,0 +1,133 @@
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+
+
+    "copyOnSelect": false,
+
+    "copyFormatting": false,
+
+    "profiles": {
+        "defaults": {},
+        "list": [
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "Windows PowerShell",
+                "commandline": "powershell.exe",
+                "hidden": false
+            }, {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "Command Prompt",
+                "commandline": "cmd.exe",
+                "hidden": false
+            }, {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }, {
+                "acrylicOpacity": 0.5,
+                "closeOnExit": true,
+                "colorScheme": "Campbell",
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+                "cursorColor": "#CCCCCC",
+                "cursorShape": "bar",
+                "fontFace": "Monaco",
+                "fontSize": 14,
+                "guid": "{1d4e097e-fe87-4164-97d7-3ca794c316fd}",
+                "historySize": 9001,
+                "name": "Bash",
+                "padding": "0, 0, 0, 0",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%"
+                // "useAcrylic": true
+            }
+        ]
+    },
+
+    "schemes": [],
+
+    "actions": [
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }, {
+            "command": {
+                "action": "splitPane",
+                "split": "horizontal",
+                "splitMode": "duplicate"
+            },
+            "keys": "ctrl+b"
+        }, {
+            "command": {
+                "action": "splitPane",
+                "split": "vertical",
+                "splitMode": "duplicate"
+            },
+            "keys": "ctrl+n"
+        }, {
+            "command": "closeTab",
+            "keys": "shift+z"
+        }, {
+            "command": {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "keys": "ctrl+j"
+        }, {
+            "command": {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "keys": "ctrl+h"
+        }, {
+            "command": {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "keys": "ctrl+l"
+        }, {
+            "command": {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "keys": "ctrl+k"
+        }, {
+            "command": "nextTab",
+            "keys": "ctrl+down"
+        }, {
+            "command": "prevTab",
+            "keys": "ctrl+up"
+        }, {
+            "command": {
+                "action": "newTab",
+                "profile": "{1d4e097e-fe87-4164-97d7-3ca794c316fd}",
+                "tabTitle": "ffss",
+                "startingDirectory": "E:\\lzj\\"
+            },
+            "keys": "ctrl+shift+t"
+        }
+    ]
+}
