@@ -6,12 +6,16 @@
 tmux_open() {
 	if [ -z $(tmux ls | grep open:) ]; then
 		tmux new -s open -d
-		tmux rename-window -t zsh srv
-		tmux split-window -h
+		tmux rename-window -t open srv
+    	tmux split-window -h
+    	tmux split-window
 
 		tmux new-window -n oth
 		tmux select-window -t oth
 		tmux split-window -h
+
+        tmux send-keys -t "open:1.2" 'htop' C-m
+		tmux select-window -t srv
 
 		tmux attach -t open
 	else
