@@ -16,47 +16,39 @@
         "<C-c>": true,
         "<C-v>": true
     },
-    "vim.normalModeKeyBindingsNonRecursive": [{
-            "before": [
-                "Z", "Z"
-            ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["Z","Z"],
             "commands": [":q!"]
         },
         {
-            "before": [
-                "<leader>", "w"
-            ],
+            "before": ["<leader>","w"],
             "commands": [":w"]
         },
         {
-            "before": [
-                "<leader>", "c"
-            ],
+            "before": ["<leader>","c"],
             "commands": [":noh"]
         },
         {
-            "before": [
-                "<leader>", "s", "p"
-            ],
+            "before": ["<leader>","s","p"],
             "commands": [":split"]
-        }, {
-            "before": [
-                "<leader>", "v", "p"
-            ],
+        },
+        {
+            "before": ["<leader>","v","p"],
             "commands": [":vsplit"]
         }
     ],
-    "vim.insertModeKeyBindings": [{
-        "before": [
-            "j", "k"
-        ],
-        "after": ["<ESC>"]
-    }],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","k"],
+            "after": ["<ESC>"]
+        }
+    ],
     "editor.tabSize": 4,
-    "editor.fontSize": 16,
+    "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
     "editor.cursorStyle": "line",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.fontWeight": "normal",
     "editor.lineNumbers": "on",
     "editor.insertSpaces": true,
@@ -78,7 +70,7 @@
     "go.gotoSymbol.includeImports": true,
     "go.languageServerExperimentalFeatures": {},
     "editor.formatOnPaste": true,
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 12,
     "explorer.autoReveal": false,
     "git.autofetch": true,
     "editor.minimap.maxColumn": 1000,
@@ -102,5 +94,14 @@
     "debug.console.wordWrap": false,
     "editor.wordWrap": "wordWrapColumn",
     "C_Cpp.clang_format_sortIncludes": true,
-    "C_Cpp.autocomplete": "Disabled"
+    "C_Cpp.autocomplete": "Disabled",
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "mblode.pretty-formatter"
+    }
 }
