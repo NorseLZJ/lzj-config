@@ -48,7 +48,7 @@
     "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
     "editor.cursorStyle": "line",
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.fontWeight": "normal",
     "editor.lineNumbers": "on",
     "editor.insertSpaces": true,
@@ -103,5 +103,9 @@
     },
     "[jsonc]": {
         "editor.defaultFormatter": "mblode.pretty-formatter"
-    }
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "files.autoGuessEncoding": true,
 }
