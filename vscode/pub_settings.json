@@ -16,34 +16,31 @@
         "<C-c>": true,
         "<C-v>": true
     },
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["Z","Z"],
+    "vim.normalModeKeyBindingsNonRecursive": [{
+            "before": ["Z", "Z"],
             "commands": [":q!"]
         },
         {
-            "before": ["<leader>","w"],
+            "before": ["<leader>", "w"],
             "commands": [":w"]
         },
         {
-            "before": ["<leader>","c"],
+            "before": ["<leader>", "c"],
             "commands": [":noh"]
         },
         {
-            "before": ["<leader>","s","p"],
+            "before": ["<leader>", "s", "p"],
             "commands": [":split"]
         },
         {
-            "before": ["<leader>","v","p"],
+            "before": ["<leader>", "v", "p"],
             "commands": [":vsplit"]
         }
     ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j","k"],
-            "after": ["<ESC>"]
-        }
-    ],
+    "vim.insertModeKeyBindings": [{
+        "before": ["j", "k"],
+        "after": ["<ESC>"]
+    }],
     "editor.tabSize": 4,
     "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
@@ -107,5 +104,5 @@
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "files.autoGuessEncoding": true,
+    "files.autoGuessEncoding": true
 }

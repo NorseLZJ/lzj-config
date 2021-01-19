@@ -1,3 +1,3 @@
- git config --global alias.mlog "log --pretty=format:'%h %an:%ae %cr %s'" 
-
-
+git config --global alias.mlog "log --pretty=format:'%h %an:%ae %cr %s'" 
+git config --global alias.log1 "log --pretty=format:'%h %an:%ae %aD %s'" 
+git config --global alias.log2 "log --pretty=format:'%h %an:%ae %aD %s' --graph" 
