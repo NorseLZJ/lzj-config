@@ -9,3 +9,5 @@
 	mlog = "log --pretty=format:'%h %an:%ae %cr %s'" 
 	log1 = "log --pretty=format:'%h %an:%ae %aD %s'" 
 	log2 = "log --pretty=format:'%h %an:%ae %aD %s' --graph" 
+[pull]
+	rebase = true
