@@ -1,37 +1,36 @@
-ZSH_DISABLE_COMPFIX=true
-export ZSH="/root/.oh-my-zsh"
-ZSH_THEME="itchy"
+export ZSH="/home/rs/.oh-my-zsh"
+ZSH_THEME="half-life"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_UPDATE_PROMPT="true"
 export UPDATE_ZSH_DAYS=13
-DISABLE_MAGIC_FUNCTIONS=true
+DISABLE_MAGIC_FUNCTIONS="true"
 DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="mm/dd/yyyy"
-plugins=(git)
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+plugins=(rails git textmate ruby lighthouse tmux nmap)
 source $ZSH/oh-my-zsh.sh
-
 export GOROOT=/usr/local/go
 export GOPATH=~/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin:$GOBIN
 export GOPROXY="https://goproxy.cn"
-
+export PATH=$PATH:/home/rs/bin/
 alias em='emacsclient -t'
+alias emacs='emacs -nw'
 alias py='python3.7'
 alias mycli='mycli -u root -p 123456'
 alias psg='ps -ef | grep $1'
 alias psa='ps aux | grep $1'
 alias nsg='netstat -npl | grep $1'
+alias nsal='netstat -tulnp'
+alias nsau='netstat -atunp'
 alias tk='tmux kill-session -t $1'
 alias ts='tmux attach-session -t $1'
 alias tl='tmux ls'
-
-#docker alias
 alias dkst='docker start $1'
 alias dkstp='docker stop $1'
 alias dkrs='docker restart $1'
@@ -40,4 +39,6 @@ alias dkri='docker rmi $1'
 alias dki='docker images' 
 alias dkif='docker inspect $1' 
 alias dkpa='docker ps -qa' 
-
+alias nps='nmap -sP 192.168.1.1/24 | grep 'Nmap scan report for' | awk '{print $5}' | cat > ip.txt'
+alias g++='g++ -std=c++17'
+alias clang++='clang++ -std=c++17'
