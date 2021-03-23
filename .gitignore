@@ -1,2 +1,7 @@
 shell_mysql/cache
 node_mysql/node_modules
+
+node_mysql/package-lock.json
+node_mysql/package.json
+
+python/.vscode
