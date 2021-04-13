@@ -16,11 +16,11 @@
 
 如果是觉得启动速度慢可以使用 emacs --daemon 解决
 
-[Emacs --daemon](https://www.emacswiki.org/emacs/EmacsAsDaemon)
+[Emacs Daemon](https://www.emacswiki.org/emacs/EmacsAsDaemon)
 
 spacemacs 常用的一些模块地址
 
-[Emacs layer](https://www.spacemacs.org/layers/LAYERS.html)
+[Emacs Layers](https://www.spacemacs.org/layers/LAYERS.html)
 
 ## IDEA (Goland,CLion,WebStorm,...)
 
@@ -38,11 +38,12 @@ IDEA+IdeaVim 写代码真的爽
 
 ## docker (Redis,MySQL,初始化等操作)
 
-     Redis(初始化，进入，连接)
-     MySQL(初始化，进入，mycli 连接，备份，导入...)
+Redis(初始化，进入，连接)
+
+MySQL(初始化，进入，mycli 连接，备份，导入...)
 
 ## 文件服务器
 
-告别 Apache + ... 传统文件服务器，这个文件服务器只需要一个 exe 和 share.json
+告别 Apache + ... 传统文件服务器，这个文件服务器只需要一个 exe
 
-[FileServer](https://github.com/NorseLZJ/program/tree/master/fileServer)
+[FileServer](https://github.com/NorseLZJ/example/tree/master/cmd/fsv)
