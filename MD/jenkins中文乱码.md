@@ -1,6 +1,13 @@
 # jenkins windows shell 中文乱码 
 
 
+- 错误
+
+
+- 解决方法
+
+
+然后重启Jenkins
 
 
 
