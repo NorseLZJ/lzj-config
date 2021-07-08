@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "init tmux.conf"
-cat >"~/.tmux.conf" <<EOF
+cat >~/.tmux.conf <<EOF
 #C-b is not acceptable -- Vim uses it
 set-option -g prefix C-w
 
@@ -27,7 +27,7 @@ EOF
 
 echo "init tmux.sh"
 
-cat >"~/tmux.sh" <<EOF
+cat >~/tmux.sh <<EOF
 #!/bin/bash
 name=$1
 tmux_open() {
