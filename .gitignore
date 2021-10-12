@@ -5,3 +5,8 @@ node_mysql/package-lock.json
 node_mysql/package.json
 
 python/.vscode
+
+MD/.DS_Store
+python/simple/.idea
+
+
