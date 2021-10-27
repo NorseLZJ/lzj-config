@@ -10,8 +10,9 @@ export ZSH="/Users/user/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="simple"
 #ZSH_THEME="half-life"
-ZSH_THEME="simple"
 #ZSH_THEME="clean"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="kolo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,17 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias updatedb='/usr/libexec/locate.updatedb'
-alias lsof='lsof -n '
-alias nmap='nmap -T5 '
-
-if [ $(uname) = "Darwin" ];then
-    # mac 
-    alias nsla='netstat -AaLlnW '
-else
-    # linux
-    alias nsla='netstat -ntulp '
-fi
 
 export GOROOT=/usr/local/go
 export GOPATH=~/go
@@ -138,5 +128,23 @@ export PATH=$PATH:$conda
 #unset __conda_setup
 #
 
+. "$HOME/.cargo/env"
+
 alias htopcpu='htop -C -s PERCENT_NORM_CPU '
 alias htopmem='htop -C -s PERCENT_MEM '
+alias htop='htopcpu'
+alias lsof='lsof -n '
+alias nmap='nmap -T5 '
+
+if [ $(uname) = "Darwin" ];then
+    # mac 
+    alias nsla='netstat -AaLlnW '
+    alias updatedb='/usr/libexec/locate.updatedb'
+else
+    # linux
+    alias nsla='netstat -ntulp '
+fi
+
+
+
+
