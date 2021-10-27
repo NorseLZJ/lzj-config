@@ -137,3 +137,6 @@ export PATH=$PATH:$conda
 #fi
 #unset __conda_setup
 #
+
+alias htopcpu='htop -C -s PERCENT_NORM_CPU '
+alias htopmem='htop -C -s PERCENT_MEM '
