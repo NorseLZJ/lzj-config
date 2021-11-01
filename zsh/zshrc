@@ -138,13 +138,16 @@ alias nmap='nmap -T5 '
 
 if [ $(uname) = "Darwin" ];then
     # mac 
+    echo "mac"
     alias nsla='netstat -AaLlnW '
     alias updatedb='/usr/libexec/locate.updatedb'
+    alias hcc='htop -s PERCENT_NORM_CPU '
+    alias hcm='htop -s PERCENT_MEM '
 else
     # linux
+    echo "linux"
     alias nsla='netstat -ntulp '
+    alias hcc='htop -s PERCENT_CPU '
+    alias hcm='htop -s PERCENT_MEM '
 fi
-
-
-
 
