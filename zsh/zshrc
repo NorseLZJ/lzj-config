@@ -151,3 +151,5 @@ else
     alias hcm='htop -s PERCENT_MEM '
 fi
 
+# 设置 nocaps->ctrl
+setxkbmap -option ctrl:nocaps
