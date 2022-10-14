@@ -130,11 +130,17 @@ export PATH=$PATH:$conda
 
 . "$HOME/.cargo/env"
 
+function ipsf() {
+        ifconfig | grep -v 'inet6' | grep inet | awk '{print $2}'
+}
+
 alias htopcpu='htop -C -s PERCENT_NORM_CPU '
 alias htopmem='htop -C -s PERCENT_MEM '
 alias htop='htopcpu'
 alias lsof='lsof -n '
 alias nmap='nmap -T5 '
+alias ips='ifconfig | grep -v 'inet6' | grep inet'
+alias ips2=ipsf
 
 if [ $(uname) = "Darwin" ];then
     # mac 
