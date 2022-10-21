@@ -46,4 +46,4 @@ MySQL(初始化，进入，mycli 连接，备份，导入...)
 
 告别 Apache + ... 传统文件服务器，这个文件服务器只需要一个 exe
 
-[FileServer](https://github.com/NorseLZJ/example/tree/master/cmd/fsv)
+[FileServer](https://github.com/NorseLZJ/example/tree/master/go/fsv)
