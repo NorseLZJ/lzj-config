@@ -12,8 +12,21 @@ if has("autocmd")
 		au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif                                                        
 
+
+
+set keep-english-in-normal
+set keep-english-in-normal-and-restore-in-insert
+
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+
+"let mapleader=","
 let mapleader='\'
 let g:mapleader='\'
+set easymotion
+map <Leader> <Plug>(easymotion-prefix)
+ 
 
 inoremap jk  <Esc>
 
@@ -26,9 +39,5 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-
-noremap fj /
-noremap fk ?
-noremap cs :%s/v1/v2/g
 
 
