@@ -25,7 +25,7 @@ Plug 'easymotion/vim-easymotion'
 let mapleader='\'
 let g:mapleader='\'
 set easymotion
-map <Leader> <Plug>(easymotion-prefix)
+"map <Leader> <Plug>(easymotion-prefix)
  
 
 inoremap jk  <Esc>
